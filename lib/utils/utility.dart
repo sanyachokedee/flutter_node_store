@@ -1,7 +1,28 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 class Utility {
+// Logger
+  final logger = Logger(
+    printer: PrettyPrinter(
+      methodCount: 1,
+      colors: true,
+      printEmojis: true,
+      printTime: false,
+    ),
+  );
+
+  // Test Logger ทดสอบถ้้ามีการโหลด Main เวลาเอาไปใช้ พิมพ์คำสั่งได้เลย
+  void testLogger() {
+    logger.t('Verbose log');
+    logger.d('Debug log');
+    logger.i('Info log');
+    logger.w('Warning log');
+    logger.e('Error log');
+    logger.f('What a terrible failure log');
+  }
+
   // Check Network Connection
   static Future<String> checkNetwork() async {
     var checkNetwork = await Connectivity().checkConnectivity();
