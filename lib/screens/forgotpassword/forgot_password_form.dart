@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_node_store/app_router.dart';
 import 'package:flutter_node_store/components/custom_textfield.dart';
